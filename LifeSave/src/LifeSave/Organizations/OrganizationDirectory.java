@@ -4,10 +4,37 @@
  */
 package LifeSave.Organizations;
 
+import LifeSave.Organizations.Organization;
+import java.util.ArrayList;
+
 /**
  *
- * @author jkoti
+ * @author parthkalani
  */
+
 public class OrganizationDirectory {
+    
+    private ArrayList<Organization> organizationList;
+    
+    public OrganizationDirectory()
+    {
+      organizationList = new ArrayList<>();
+    }
+    
+    public Organization addOrganization(Organization organization)
+    {
+       
+        organizationList.add(organization);
+        return organization;
+    }
+
+    public ArrayList<Organization> getOrganizationList() {
+        return organizationList;
+    }
+    
+    public void deleteOrganization(Organization organization)
+    {
+      organizationList.remove(organization);
+    }
     
 }
