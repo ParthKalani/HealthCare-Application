@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author parthkalani
+ * @author jkoti
  */
 public class LoginPage extends javax.swing.JFrame {
 
