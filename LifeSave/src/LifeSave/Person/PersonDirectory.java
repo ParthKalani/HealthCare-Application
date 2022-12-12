@@ -12,14 +12,49 @@ import java.util.ArrayList;
  */
 public class PersonDirectory {
     
-
+      private ArrayList<Enlistee> enlisteeList;
+      private ArrayList<OrganSeeker> organSeekerLsit;
       private ArrayList<Person> personList;
     
       public PersonDirectory()
       {
+            enlisteeList = new ArrayList<>();
+            organSeekerLsit = new ArrayList<>();
             personList = new ArrayList<>();
       }
       
+      public Enlistee addVolunteer()
+    {
+        Enlistee volunteer = new Enlistee();
+        enlisteeList.add(volunteer);
+        return volunteer;
+    }
+    
+    public void removeVolunteer(Enlistee volunteer)
+    {
+      enlisteeList.remove(volunteer);
+    }
+    
+    public OrganSeeker addCustomer()
+    {
+        OrganSeeker customer = new OrganSeeker();
+        organSeekerLsit.add(customer);
+        return customer;
+    }
+    
+    public void removeCustomer(OrganSeeker customer)
+    {
+        organSeekerLsit.remove(customer);
+    }
+    
+
+    public ArrayList<OrganSeeker> getOrganSeekerLsit() {
+        return organSeekerLsit;
+    }
+
+    public ArrayList<Enlistee> getEnlisteeList() {
+        return enlisteeList;
+    }
 
 
       public Person addPerson()
