@@ -4,14 +4,13 @@
  */
 package LifeSave.Organizations;
 
-import LifeSave.Organizations.Organization;
+import LifeSave.Organizations.Organization.Type;
 import java.util.ArrayList;
 
 /**
  *
  * @author parthkalani
  */
-
 public class OrganizationDirectory {
     
     private ArrayList<Organization> organizationList;
@@ -21,10 +20,37 @@ public class OrganizationDirectory {
       organizationList = new ArrayList<>();
     }
     
-    public Organization addOrganization(Organization organization)
+    public Organization addOrganization(Type type)
     {
-       
-        organizationList.add(organization);
+       Organization organization = null;
+        if (type.getValue().equals(Type.Enlistee.getValue())){
+            organization = new FreeWillOrg();
+            organizationList.add(organization);
+        }
+        else if (type.getValue().equals(Type.OrganSeeker.getValue())){
+            organization = new OrganSeekerOrg();
+            organizationList.add(organization);
+        }
+        else if (type.getValue().equals(Type.AccountManager.getValue())){
+            organization = new UserAccountsOrg();
+            organizationList.add(organization);
+        }
+         else if (type.getValue().equals(Type.Sponsor.getValue())){
+            organization = new FundingsOrg();
+            organizationList.add(organization);
+        }
+         else if (type.getValue().equals(Type.Mobility.getValue())){
+            organization = new MobilityOrg();
+            organizationList.add(organization);
+        }
+          else if (type.getValue().equals(Type.HealthAuditor.getValue())){
+            organization = new HealthCouncilCommittee();
+            organizationList.add(organization);
+        }
+           else if (type.getValue().equals(Type.Surgeon.getValue())){
+            organization = new HospitalOrg();
+            organizationList.add(organization);
+        }
         return organization;
     }
 
