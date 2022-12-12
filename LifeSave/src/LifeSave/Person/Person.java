@@ -4,7 +4,7 @@
  */
 package LifeSave.Person;
 
-//import LifeSave.Utilities.Donation;
+import LifeSave.Utilities.Charity;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,24 +15,25 @@ import java.util.Date;
  */
 public class Person {
     
-    private String firstName;
+    private String fName;
     private String name;
-    private String lastName;
+    private String lName;
     private Date dob;
-    private String address1;
+    private String add1;
     private String phoneNumber;
     private String personId;
+    private boolean Enlistee;
+    private boolean OrganSeeker;
     private String emailId;
-    private String occupation;
-    private String address2;
-    private String town;
+    private String add2;
+    private String city;
     private String zipCode;
     private String gender;
     private static int count = 00001;
     private String country;
     private String state;
     private int age;
-
+    private ArrayList<Charity> charityList;
 
     public int getAge() {
         return age;
@@ -49,22 +50,23 @@ public class Person {
         sb.append(count);
         personId = sb.toString();
         count++;   
+        charityList = new ArrayList<>();
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getfName() {
+        return fName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setfName(String fName) {
+        this.fName = fName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getlName() {
+        return lName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setlName(String lName) {
+        this.lName = lName;
     }
 
     public Date getDob() {
@@ -89,7 +91,7 @@ public class Person {
     }
 
     public void setName() {
-        this.name = this.firstName+ " "+this.lastName;
+        this.name = this.fName+ " "+this.lName;
     }
 
     public String getPersonId() {
@@ -97,12 +99,29 @@ public class Person {
     }
 
    
-    public String getAddress1() {
-        return address1;
+    public boolean isEnlistee() {
+        return Enlistee;
     }
 
-    public void setAddress1(String address1) {
-        this.address1 = address1;
+    public void setEnlistee(boolean Enlistee) {
+        this.Enlistee = Enlistee;
+    }
+
+    public boolean isOrganSeeker() {
+        return OrganSeeker;
+    }
+
+    public void setOrganSeeker(boolean OrganSeeker) {
+        this.OrganSeeker = OrganSeeker;
+    }
+
+   
+    public String getAdd1() {
+        return add1;
+    }
+
+    public void setAdd1(String add1) {
+        this.add1 = add1;
     }
 
     public String getEmailId() {
@@ -113,30 +132,20 @@ public class Person {
         this.emailId = emailId;
     }
 
- 
-
-    public String getOccupation() {
-        return occupation;
+    public String getAdd2() {
+        return add2;
     }
 
-    public void setOccupation(String occupation) {
-        this.occupation = occupation;
+    public void setAdd2(String add2) {
+        this.add2 = add2;
     }
 
-    public String getAddress2() {
-        return address2;
+    public String getCity() {
+        return city;
     }
 
-    public void setAddress2(String address2) {
-        this.address2 = address2;
-    }
-
-    public String getTown() {
-        return town;
-    }
-
-    public void setTown(String town) {
-        this.town = town;
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getZipCode() {
@@ -178,5 +187,11 @@ public class Person {
         this.state = state;
     }
 
+       public Charity addCharity()
+    {
+        Charity donation = new Charity();
+        charityList.add(donation);
+        return donation;
+    }
             
 }
