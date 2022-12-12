@@ -12,7 +12,6 @@
  */
 public abstract class Enterprise extends Organization{
     
-    
     private String enterpriseId;
     private static int count = 1;
     private OrganizationDirectory organizationDirectory;
@@ -32,7 +31,11 @@ public abstract class Enterprise extends Organization{
     
     public enum EnterpriseType{
         
-       Hospital("Hospital");
+       ServiceP("ServiceP"),
+       OrganSeeker("OrganSeeker"),
+       Charity("Charity"),
+       Government("Government"),
+       Medical("Medical");
     
        
        private String value;
@@ -59,7 +62,5 @@ public abstract class Enterprise extends Organization{
     public String toString() {
         return this.getName();
     }
-    
-    
     
 }
