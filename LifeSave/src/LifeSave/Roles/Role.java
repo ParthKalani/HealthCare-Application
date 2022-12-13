@@ -4,10 +4,57 @@
  */
 package LifeSave.Roles;
 
+import LifeSaveMain.EcoSystem;
+import LifeSave.Enterprises.Enterprise;
+import LifeSave.Organizations.Organization;
+import LifeSave.UserAccounts.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
- * @author jkoti
+ * @author kiara
  */
-public class Role {
+public abstract class Role {
+    
+    public enum RoleType{
+        Admin("Admin"),
+        Enlistee("Enlistee"),
+        AccountManager("Account Manager"),
+        OrganSeeker("Organ Seeker"),
+        Driver("Driver"),
+        HealthAuditor("Health Auditor"),
+        LifeSaveManager("LifeSave Manager"),
+        Surgeon("Surgeon"),
+        Sponsor("Sponsor");
+        
+        
+        private String value;
+        private RoleType(String value){
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return value;
+        }
+    }
+    
+    public abstract JPanel createWorkArea(JPanel userProcessContainer, 
+            UserAccount account, 
+            Organization organization, 
+            Enterprise enterprise, 
+            EcoSystem ecoSystem);
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
+    
+    
     
 }
+
