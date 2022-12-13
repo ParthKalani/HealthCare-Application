@@ -9,9 +9,10 @@ import java.util.ArrayList;
 
 /**
  *
- * @author jkoti
+ * @author parthkalani
  */
 public class Network {
+
     private String country;
 
     private String state;
